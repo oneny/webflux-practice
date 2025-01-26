@@ -1,1 +1,2 @@
-spring.application.name=webflux-image
+server:
+  port: 8788

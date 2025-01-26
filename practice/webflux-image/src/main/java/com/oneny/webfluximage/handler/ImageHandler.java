@@ -19,6 +19,9 @@ public class ImageHandler {
     public Mono<ServerResponse> getImageById(ServerRequest serverRequest) {
         String imageId = serverRequest.pathVariable("imageId");
 
+        // ImageReactorRepository에서
+        // imageId에 해당하는 이미지가 없는 경우 에러 객체 throw out하기 때문에
+        // 해당 레벨에서 에러를 ResponseStatusException로 변환
         return imageService.getImageById(imageId)
                 .map(image -> new ImageResponse(
                         image.getId(),

@@ -31,6 +31,7 @@ public class ImageReactorRepository {
             }
 
             ImageEntity image = imageMap.get(id);
+            // 이미지가 없는 경우 error throw out
             if (image == null) {
                 sink.error(new RuntimeException("image not found"));
             } else {
