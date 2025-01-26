@@ -14,7 +14,7 @@ public class UserReactorRepository {
 
     public UserReactorRepository() {
         var user = new UserEntity(
-                "1234",
+                1234L,
                 "taewoo",
                 32,
                 "1",

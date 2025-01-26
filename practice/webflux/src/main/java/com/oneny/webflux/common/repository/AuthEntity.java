@@ -10,15 +10,13 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.time.LocalDateTime;
 
 @Data
-@Table("USER")
-public class UserEntity {
+@Table("AUTH")
+public class AuthEntity {
 
     @Id
-    private final Long id;
-    private final String name;
-    private final int age;
-    private final String profileImageId;
-    private final String password;
+    private Long id;
+    private final Long userId;
+    private final String token;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -27,15 +25,13 @@ public class UserEntity {
     private LocalDateTime updatedAt;
 
     @PersistenceCreator
-    public UserEntity(Long id, String name, int age, String profileImageId, String password) {
+    public AuthEntity(Long id, Long userId, String token) {
         this.id = id;
-        this.name = name;
-        this.age = age;
-        this.profileImageId = profileImageId;
-        this.password = password;
+        this.userId = userId;
+        this.token = token;
     }
 
-    public UserEntity(String name, int age, String profileImageId, String password) {
-        this(null, name, age, profileImageId, password);
+    public AuthEntity(Long userId, String token) {
+        this(null, userId, token);
     }
 }
