@@ -34,20 +34,20 @@ dependencies {
     implementation("io.asyncer:r2dbc-mysql:0.9.2")
 
     if (System.getProperty("os.arch") == "aarch64" && System.getProperty("os.name") == "Mac OS X") {
-        runtimeOnly("io.netty:netty-resolver-dns-native-macos:_:osx-aarch_64")
+        runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64")
     }
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // lombok
-    testAnnotationProcessor("org.projectlombok:lombok:_")
-    testCompileOnly("org.projectlombok:lombok:_")
+    testAnnotationProcessor("org.projectlombok:lombok")
+    testCompileOnly("org.projectlombok:lombok")
 
     // mockito
-    testImplementation("org.mockito:mockito-core:_")
+    testImplementation("org.mockito:mockito-core")
 
     // reactor test
-    testImplementation("io.projectreactor:reactor-test:_")
+    testImplementation("io.projectreactor:reactor-test")
 }
 
 tasks.named('test') {
